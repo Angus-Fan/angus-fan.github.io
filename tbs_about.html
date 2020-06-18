@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Turn Based Strategy Game (Skeletons)</title>
+	<title>Turn-Based Strategy Game (Skeletons)</title>
 	<link rel="icon" type="image/png" href="/images/Anugs_v3.png"/>
 	<meta charset="utf-8" />
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />-->
@@ -60,18 +60,21 @@
 				<h1>Skeletons</h1>
 				<span class="image main"><img src="images/tbs_thumbnail.jpg" alt="" /></span>
 				<h2>About The Project</h2>
-				<p>I've always wanted to develop my own game but never found the spare time to do so. After finishing my
-					honours project, I had some spare time until graduation.
-					I decided that I would use this time to develop a game under one of my favorite game genres, turn
-					based strategy games. I was fairly familiar with Unity, as
-					I've been making game systems on the side. This time I wanted to realize and fully develop the
-					project, instead of making a few systems and then calling it a day. I began by researching grid based movement
-					and with the help of some online resources I got started with a strong foundation.
-					From start to finish, I tackled everything that was required for a complete game. I summarized a
-					majority of the steps I took in order to complete my project in the video below.
-					However I will also document my thought process and the taks I needed to complete below. In addition to the code 
-					snippets, you can view the entire project or a few of the scripts at my GitHub repository 
+				<p>I've always wanted to develop my own game but never found the spare time to do so.
+					 After finishing my honours project, I had some spare time until graduation 
+					 I decided that I would use this time to develop a game under one of my favorite 
+					 game genres, turn-based strategy games. I have grown accustomed to Unity after creating 
+					 a few different game systems in my spare time. For this project I wanted to fully finish a project 
+					 instead of simply developing a few systems and moving onto another project. I began 
+					 by researching grid-based movement and with the help of some online resources 
+					 I successfully started with a strong foundation. From start to finish, I tackled everything 
+					 that was required for a complete game. I summarized a majority of the steps I took 
+					 in order to complete my project in the video below. However I have also documented my 
+					 thought process and the tasks I needed to complete below. In addition to the code snippets, 
+					 you can view the entire project or a few of the scripts at my GitHub repository  
 					<a href="https://github.com/Angus-Fan/TurnBasedStrategyGame" target="_blank">here!</a>
+					In addition if you want to give the game a try you can download it
+					<a href="https://angusfan.itch.io/skeletons" target="_blank">here!</a>
 				</p>
 				<!--style="border: red 2px solid"-->
 
@@ -108,7 +111,7 @@
 					represented the tile in game, a reference to a unit that is occupying the tile, the movement cost to enter the tile,
 					and finally a boolean if the unit can walk onto the tile. These tiles were then stored in a graph, each node in the graph
 					representing a tile. By setting up a graph with a node based system, each node had references to the tiles around them.
-					This would prove useful down the line when the A* pathfinding algorithm needed to be implemented.
+					This was proven useful down the line when the A* pathfinding algorithm needed to be implemented.
 				</p>
 					<pre><code>
 /* Unity uses C# 
@@ -131,8 +134,8 @@ public bool isWalkable=true;			//Some tiles shouldn't be entered such as a wall
 						scripts that provide information and a visual represntation of the chracter. Each unit will have its 
 						own set of characteristics that would make it unique from the others. Below is the standard setup that
 						is used for every unit in the game, do bear in mind that there is a lot more functionality that I placed in the unit script aside 
-						from basic stats. Looking in retrospect, I should have kept the unit stats and other functionality, such as 
-						the unit's state in seperate files.
+						from basic stats. Looking in retrospect, I regret not keeping kept the unit stats and other functionality, such as 
+						the unit's state in separate files.
 						</p>
 						<pre><code>
 //Some of the variables that hold information regarding the unit
@@ -164,7 +167,7 @@ public enum movementStates
 				 Once I've made my units I needed to allow them to move around the board. Once a unit is selected, the player can
 				 click on a tile within the unit's movement range in order to travel to the tile. In order to acheive this I looked
 				 into implementing the A* pathfinding algorithm. The A* algorithm is similar to Dijkstra's finding the shortest
-				 path available to reach a destination. The algorithm looks for the smallest cost of traversal from its starting position,
+				 path available to reach a destination. Then looks for the smallest cost of traversal from its starting position,
 				 travelling node to node recording its cost. As the algorithm travels with the shortest cost, once it reaches the destination,
 				 we know that the path to get there is the shortest cost route.
 				 Once the path has reached the endpoint, the algorithm then retraces its steps back to the beginning. The resulting
@@ -177,7 +180,7 @@ public enum movementStates
 				difficult for the player to determine what tiles the unit can reach. In order to show accurate movement options to the player
 				I needed to write a new function to calculate all available movement options for the unit. Below you can see the code that I 
 				wrote in order to get the correct nodes that the unit could walk to. I encourage you to watch the video for the explanation 
-				behind this function and how it works. I had a very enjoyable time programming and figuring out how this would work.
+				behind this function and how it works. I had a very enjoyable time programming and discovering the appropriate solution.
 				<pre><code>
 //In:  
 //Out: HashSet<Node> of the tiles that can be reached by unit
@@ -251,12 +254,12 @@ public HashSet<Node> getUnitMovementOptions()
 				<p><span class="image right"><img src="images/tbs_unitUI.png" alt="" /></span>
 					For the UI I wanted to ensure that information was clearly shown to the player. This includes the unit's stats
 					the movement range, attack range, and the path that the unit would take in order to reach the destination. As I have 
-					never tackled this type problem before I had to think of a creative solution to properly display the information 
+					never tackled this type problem before, I had to think of a creative solution to properly display the information 
 					to the player. When a unit is moused over, its stats are shown in the top left corner of the screen. I threw in some 
-					icons to help the player understand what numbers correspond to which stats. To display the accurate grid UI, I needed to
-					think creatively and use different UI panels that are stacked on different layers to provide a believable display. Below you
+					icons to help the player identify which numbers correspond to which stats. To display the accurate grid UI,
+					creative and unique UI layers were required to provide a believable display. Below you
 					can see the different layers working together to create a cohesive system. For the purposes of the image below, I clearly seperated
-					the UI layers. During the game these layers are very closely layered together and it seems to be one cohesive layer.
+					the UI layers. During the game these layers are very closely layered together as if it was one cohesive layer.
 					<img src="images/tbs_UI.PNG" alt="" class="center" style="margin-top: 25px;"/>
 				   </p>
 				
@@ -273,8 +276,8 @@ public HashSet<Node> getUnitMovementOptions()
 				
 				<h2>Debugging and Documentation</h2>
 				<p>Debugging was always an enjoyable portion of the project, it really humbled me as I  saw the cracks in the systems that I built. 
-					There were problems that I never thought would happen as they were an afterthought when I added new systems. One of the most notable ones were 
-					when I added animations to my chracters. Before the animations were added, the instant the player clicked the destination for the unit it would
+					It was intriguing to discover new, unprecedented problems as I built new systems one by one. One of the most notable challenges was 
+					when I added animations to my chracters. For example, before the animations were added, the instant the player clicked the destination for the unit it would
 					'teleport' to the designated area immediately, switching its state to 'moved'. However after adding animation the state wasn't set until the unit 
 					reached its destination, allowing the player to click multiple times to either move further than intended or attack multiple times when the character 
 					was in its moving animation. Another important lesson that I learned was to properly document my code, there were nights where I would hack away at implementing a new system and go to sleep right after
@@ -282,12 +285,12 @@ public HashSet<Node> getUnitMovementOptions()
 					documented my work. Ah the despair!
 				</p>
 				<h2>Lessons Learned and Conlusions</h2>
-				<p>Overall I really enjoyed spending time working on this project. It gave me the oppurunity to think about how I would implement certain features
-					and tested my ability to continually test and improve my code. Moving forward I will always write detailed documentation as I know first hand 
-					how difficult it is to understand other people's code at a glance. Another lesson that I learned was to always try to future proof systems, as 
+				<p>Overall I really enjoyed spending time working on this project. It gave me the opportunity to think about how I would implement certain features
+					and tested my ability to continually improve the quality of my code. Moving forward I will write detailed documentation as I know first hand 
+					how difficult it is to understand other people's code at a glance (my own included). Another lesson that I learned was to always try to future proof systems, as 
 					many of my old systems ran into problems as soon as I implemented new features. In addition to programming I also learned many new skills on this project.
 					I created and animated all the sprites, learned how to use terrain, lighting, and post processing systems, and also learned how to effectively communicate
-					to the player using UI elements and tutorials pages. Overall I'm very pleased with this project, however if I had more time I would have placed more objectives
+					to the player using UI elements and tutorials pages. Overall I'm very pleased with this project. However in retrospect, had I had more time I would have added more objectives
 					on the map to encourage more unique gameplay and strategies. 
 
 					
@@ -299,40 +302,22 @@ public HashSet<Node> getUnitMovementOptions()
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">
-				<section>
-					<h2>Get in touch</h2>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field half">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field half">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send" class="primary" /></li>
-						</ul>
-					</form>
-				</section>
+				
 				<section>
 					<h2>Follow</h2>
 					<ul class="icons">
-						<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a>
+						<li><a href="https://twitter.com/AngusFan4" target="blank" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a>
 						</li>
 						<li><a href="#" class="icon brands style2 fa-youtube-square"><span
 									class="label">Youtube</span></a></li>
-						<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>
+						<!--<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>-->
 						</li>
-						<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://github.com/Angus-Fan"  target="blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</section>
 				<ul class="copyright">
-					<li>&copy; Untitled. All rights reserved</li>
+					<!--<li>&copy; Untitled. All rights reserved</li>-->
 					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
