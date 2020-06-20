@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Software QA and Testing Honours Project</title>
+	<link rel="icon" type="image/png" href="/images/Anugs_v3.png"/>
+	<meta charset="utf-8" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="assets/css/main.css";/>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<p class="logo">
+					<span class="symbol"><img src="images/honoursicon.png" alt="" /></span><span class="title">Software QA and Testing Honours Project</span>
+					</p>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">Ipsum veroeros</a></li>
+				<li><a href="generic.html">Tempus etiam</a></li>
+				<li><a href="generic.html">Consequat dolor</a></li>
+				<li><a href="elements.html">Elements</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Experimental Learning in Comp 4004</h1>
+				
+				<h2>About The Project</h2>
+				<p>For my honours project I completed an in-depth set of guides and excercises regarding automated software testing and software quality assurance.
+					The goal of this project was to create a set of additional learning resources to assist students in a fourth year software quality assurance and 
+					testing course. Below I'll list the topics that were covered during the course of this project, for each topic I had to research and explain the 
+					use cases and develop a scenario which highlights the potential for each tool.
+					
+
+				</p>
+				<!--style="border: red 2px solid"-->
+
+				<div>
+					
+					<h2> Topics </h2>
+					
+					<div style=" solid;display: flex;justify-content: space-between;">
+						<ul>
+							<li><a href="#secJUnit">JUnit</a></li>
+							<li><a href="#secLog4j">Log4j</a></li>
+							<li><a href="#secSelenium">Selenium</a></li>
+							<li><a href="#secCucumber">Cucumber</a></li>
+							<li><a href="#secMulti">Testing in Multithreaded Systems</a></li>
+						</ul> 
+						
+					</div>
+				</div>
+				<h2 id="secJUnit">JUnit (Unit Testing)</h2>		
+				<p> <span class="image right"><img src="images/sqa_junitThumb.png" alt="" /></span>
+				Unit testing is used to ensure that a section of the code is performing as intended. JUnit is a tool for Java which allows developers to create test cases in order
+				to perform unit testing on their programs. In this section of the project I demonstrated how to write approriate test cases and how to write correct JUnit annotations in order
+				to execute unit testing. In addition I demonstrated how to create test suites in order to run a collection of test cases. This is helpful if you have mulitple
+				behaviours to test with sets of test cases. Learning how to write proper test cases and understanding the business logic of an application are all proper tools required
+				to accurately create unit tests to verify a system.
+				</p>
+				<h2 id="secLog4j">Log4j (Logging)</h2>
+				<p>
+					Log4j is a logging API from Apache. This logging tool allows Java applications to record logs during execution. By calling Log4j methods the user is able to document
+					a variety of different log levels and store them in a designated document for retrieval. By creating a log.properties file, the developer can modify the information that
+					is written to the log as well as modify the formatting of log file. This allows the developer to parse out information which may not be required for a sepcific test. 
+					This tool is extremely helpful in situations where the system that is being used does not necessarily have a debugger. As the log statements are written in line with the rest 
+					of the code, it is easy to identify any faults that may occur during the testing period as it is easy to read the log file and trace the path of the log messages. The objective
+					of this excercise was to deliver a proper explanation on why and how a logging tool can be implemented into a project in order to record proper log messages.
+				</p>
+				<h2 id="secSelenium">Selenium (Automated Black-Box Web Testing)</h2>
+				<p>
+					Selenium is a tool which allows for the automation of web browsers, with this tool it is possible for the tester to imitate human interaction with web elements. 
+					It may do this by performing actions similar to a human such as inputting text into a field and clicking on various web elements. This process can be useful
+					in finding potential faults in a web application. As Selenium follows the instructions that the tester has written, it is possible to re-create use cases and 
+					perform black-box testing. Through this excercise I cover how Selenium can be used as a black-box testing automation tool and cover potential problems that may occur
+					in web applications.
+				</p>
+				<h2 id="secCucumber">Cucumber (Behaviour-Driven Development)</h2>
+				<p><span class="image right"><img src="images/sqa_ccf.png" alt="" /></span>
+					Cucumber is a tool which promotes Behaviour-Driven Development (BDD). Behaviour Driven Development is a process which encourages communication between different groups 
+					of a project (technical,business,etc). With the increased communication between different groups, it may lead to less vague requirements from the client so the developers can deliver a more 
+					accurate product. The increased collaboration between different groups of a project may also reduce the ambiguity of the project; if all parties involved with the 
+					project understand the goal and create examples together, they will all be working towards completing the same tasks. In regards to Cucumber examples are written in a .feature 
+					file, examples are	stories with rules: the rules are followed, and a result is obtained at the end. It is important to note that these examples are written in plain 
+					language so everyone on the team can understand the scenario without needing a technical background. The examples created by collaboration can also allow different groups to discover the
+					faults that can occur in the system. With the examples produced they can then be created into automated tests with Cucumber. In this portion of the project I cover the 
+					importance of BDD and demonstrate how to write Cucumber feature files. To execute tests along with the feature files, associated code for testing needs to be 'glued' along with 
+					the example. Below you can see the glue code for the a feature example above, because the glue code is written in code unit tests can be run during scenarios.
+				</p>
+				<span class="image main"><img src="images/sqa_ccgc.png" alt="" /></span>
+				<h2 id="secMulti">Testing Multithreaded Systems </h2>
+				<p>
+					In this section of the project I discussed and highlighted issues regarding testing multithreaded systems. Threads are independent paths
+					of execution found in a program. In Java, threads are scheduled randomly. If tasked with testing a concurrent system, it will be difficult to accurately  document and test the system as there is no predetermined execution 
+					for the Java threads. Even if a tester managed to write test cases to cover each permutation of thread executions, it would not be feasible to execute the test cases. Due to the random execution 
+					of threads, the tester cannot force one thread to run before another. This causes a problem because test cases will not be consistent. In some cases the threads may run in the correct order passing a 
+					test case; the next time the same test is run the results may differ due to when the threads execute.
+				</p>
+				
+				
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				
+				<section>
+					<h2>Follow</h2>
+					<ul class="icons">
+						<li><a href="https://twitter.com/AngusFan4" target="blank" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a>
+						</li>
+						<li><a href="#" class="icon brands style2 fa-youtube-square"><span
+									class="label">Youtube</span></a></li>
+						<!--<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>-->
+						</li>
+						<li><a href="https://github.com/Angus-Fan"  target="blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<!--<li>&copy; Untitled. All rights reserved</li>-->
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

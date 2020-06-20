@@ -27,10 +27,10 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="index.html" class="logo">
+				<p class="logo">
 					<span class="symbol"><img src="images/tbs_logo.png" alt="" /></span><span class="title">Turn Based
 						Strategy Game</span>
-				</a>
+					</p>
 
 				<!-- Nav -->
 				<nav>
@@ -92,17 +92,15 @@
 					
 					<div style=" solid;display: flex;justify-content: space-between;">
 						<ul>
-							<li>Creating game objects and systems</li>
-							<li>Creating intuitive UI</li>
-							<li>Improving Game Feel</li>
-							<li>Designing the level and environment</li>
-							<li>Debugging and Documentation</li>
-							<li>Miscellaneous</li>
+							<li><a href="#secSyst">Creating game objects and systems</a></li>
+							<li><a href="#secImprove">Improving Game Feel</a></li>
+							<li><a href="#secDebug">Debugging and Documentation</a></li>
+							<li><a href="#secLessons">Lessons Learned and Conclusions</a></li>
 						</ul> 
 						
 					</div>
 				</div>
-				<h2>Creating game objects and systems</h2>
+				<h2 id ="secSyst">Creating game objects and systems</h2>
 				<h3>Building the Map</h3>
 				<p><span class="image right"><img src="images/tbs_mapTile.png" alt="" /></span>When I started the project, I was mainly invested into building the systems for the game to function.
 					I started simple, just getting a grid setup. The grid was built on a multidimensional array
@@ -264,7 +262,7 @@ public HashSet<Node> getUnitMovementOptions()
 				   </p>
 				
 
-				<h2>Improving Game Feel</h2>
+				<h2 id="secImprove">Improving Game Feel</h2>
 				<p>After creating all the systems and ironing out all the bugs, the game was functional but was missing a bit of character.
 					I improved game feel by adding a few different elements, the first being a slight camera shake that would scale up depending
 					on how much damage an attack did. This gave the battles a bit more punch. In addition I modified an RTS camera asset that was 
@@ -274,7 +272,7 @@ public HashSet<Node> getUnitMovementOptions()
 					particle systems, and fog levels I finally made a believable game world that could accompany our cast of characters.
 				</p>
 				
-				<h2>Debugging and Documentation</h2>
+				<h2 id="secDebug">Debugging and Documentation</h2>
 				<p>Debugging was always an enjoyable portion of the project, it really humbled me as I  saw the cracks in the systems that I built. 
 					It was intriguing to discover new, unprecedented problems as I built new systems one by one. One of the most notable challenges was 
 					when I added animations to my chracters. For example, before the animations were added, the instant the player clicked the destination for the unit it would
@@ -284,7 +282,7 @@ public HashSet<Node> getUnitMovementOptions()
 					I got it to work. The next morning I would find a few bugs but wouldn't be able to easily determine where the issues were occuring as I haven't accurately
 					documented my work. Ah the despair!
 				</p>
-				<h2>Lessons Learned and Conlusions</h2>
+				<h2 id="secLessons">Lessons Learned and Conlusions</h2>
 				<p>Overall I really enjoyed spending time working on this project. It gave me the opportunity to think about how I would implement certain features
 					and tested my ability to continually improve the quality of my code. Moving forward I will write detailed documentation as I know first hand 
 					how difficult it is to understand other people's code at a glance (my own included). Another lesson that I learned was to always try to future proof systems, as 
@@ -313,7 +311,7 @@ public HashSet<Node> getUnitMovementOptions()
 						<!--<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a>-->
 						</li>
 						<li><a href="https://github.com/Angus-Fan"  target="blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto: angus.fan@alumni.carleton.ca"Send Email class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</section>
 				<ul class="copyright">
