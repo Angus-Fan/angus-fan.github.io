@@ -1,3 +1,5 @@
+*/I will leave this here in the repo as I did not design the template
+*/However all the content on the pages and additional html elements are made from me
 Phantom by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
